@@ -79,9 +79,9 @@ module.exports = function(RED) {
       debug(`Websocket error: ${err}`);
     });
 
-    ws.addEventListener('message', function(msgInRaw) {
+    ws.addEventListener('message', function(event) {
       debug('Got a message ');
-      let msgIn = msgInRaw.data
+      let msgIn = event.data
       let msg = {};
       msg.ocpp = {};
       msg.payload = {};
